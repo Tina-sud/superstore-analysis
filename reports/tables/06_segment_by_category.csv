@@ -1,0 +1,4 @@
+﻿segment,furniture_sales,office_sales,tech_sales,furniture_margin,office_margin,tech_margin,total_sales,overall_margin
+Home Office,121931.0,124418.0,183304.0,3.2,20.8,16.6,429653.0,14.03
+Corporate,229020.0,230676.0,246450.0,3.3,17.4,17.9,706146.0,13.03
+Consumer,391049.0,363952.0,406400.0,1.8,15.5,17.4,1161401.0,11.55

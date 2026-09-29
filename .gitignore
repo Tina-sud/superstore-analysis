@@ -1,0 +1,17 @@
+# DuckDB 数据库文件由脚本生成，不进版本库（原始 CSV 会提交）
+data/*.duckdb
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器
+.vscode/
+.idea/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

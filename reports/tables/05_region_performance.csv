@@ -1,0 +1,5 @@
+﻿region,orders,sales,profit,margin_pct,sales_share_pct,weighted_discount_pct,high_discount_line_pct,loss_line_pct
+Central,1175,501240.0,39706.0,7.92,21.8,15.52,27.7,31.9
+South,822,391722.0,46749.0,11.93,17.1,14.49,10.6,16.0
+East,1401,678781.0,91523.0,13.48,29.5,13.94,16.2,19.4
+West,1611,725458.0,108418.0,14.94,31.6,12.88,3.7,9.9
