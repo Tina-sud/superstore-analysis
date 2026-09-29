@@ -67,12 +67,14 @@ def chart_discount_impact() -> Path:
         )
 
     ax.axhline(0, color="#555555", linewidth=1)
-    # 标出 20% 这条分界线——它是整份分析的核心发现
+    # 标出分水岭。注意写"20%–30% 之间"而不是"20%"：
+    # 数据里 0.20 与 0.30 之间没有任何订单，精确阈值无法从本数据定位
+    # （见 sql/08_threshold_sensitivity.sql 的敏感性检验）。
     ax.axvline(2.5, color=ACCENT, linestyle="--", linewidth=1.4)
-    ax.text(2.58, ax.get_ylim()[1] * 0.86, "折扣 20% 分水岭",
+    ax.text(2.58, ax.get_ylim()[1] * 0.86, "分水岭：20%–30% 之间",
             color=ACCENT, fontsize=9, fontweight="bold")
 
-    ax.set_title("折扣一旦超过 20%，每一单都在亏钱", fontsize=13, fontweight="bold", pad=12)
+    ax.set_title("折扣一过 20%，利润断崖转负", fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("折扣档位")
     ax.set_ylabel("利润率 (%)")
     ax.spines[["top", "right"]].set_visible(False)

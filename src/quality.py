@@ -1,7 +1,7 @@
 """数据质量校验。
 
 面试时如果你只展示"我算出了利润率是 12.47%"，说服力有限。
-如果你能说"我在这张表上跑了 7 项校验，其中 1 项发现了问题，
+如果你能说"我在这张表上跑了 8 项校验，其中 1 项发现了问题，
 我这样处理的"——那是完全不同的层次。
 
 这个模块的每一条校验都对应一类真实的生产事故：
@@ -11,6 +11,8 @@
   * 日期倒挂     -> 时区或格式解析问题
   * 取值越界     -> 单位错误（比如折扣存成了 20 而不是 0.2）
   * 枚举越界     -> 上游新增了未预期的分类值
+  * 粒度不一致   -> 订单级属性在明细表里发生变化，
+                    后续 join 会成倍放大行数，而 SUM 不会报错
 
 用法：
     python -m src.quality
@@ -85,6 +87,25 @@ CHECKS: list[tuple[str, str, str]] = [
         SELECT COUNT(*) FROM staging.stg_orders
         WHERE category NOT IN ('Furniture', 'Office Supplies', 'Technology')
            OR region   NOT IN ('Central', 'East', 'South', 'West')
+        """,
+    ),
+    (
+        "order_grain_consistency",
+        "同一 order_id 内的订单级属性（日期/客户/配送方式/州/区域）应唯一"
+        "——不唯一说明订单表和明细表粒度混了，后续 join 会成倍放大数据",
+        """
+        SELECT COUNT(*) FROM (
+            SELECT order_id
+            FROM staging.stg_orders
+            GROUP BY order_id
+            HAVING COUNT(DISTINCT order_date) > 1
+                OR COUNT(DISTINCT ship_date)  > 1
+                OR COUNT(DISTINCT customer_id) > 1
+                OR COUNT(DISTINCT ship_mode)  > 1
+                OR COUNT(DISTINCT state)      > 1
+                OR COUNT(DISTINCT region)     > 1
+                OR COUNT(DISTINCT segment)    > 1
+        )
         """,
     ),
 ]
