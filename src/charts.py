@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """生成图表。
 
 三张图对应三个结论，不追求数量：

@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: MIT
+-- SPDX-FileCopyrightText: 2026 Tina-sud
+
 -- ============================================================
 -- 06_segment_by_category.sql
 -- ------------------------------------------------------------

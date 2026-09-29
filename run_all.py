@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """一键跑通整条流水线。
 
     python run_all.py

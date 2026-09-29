@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """数据库连接与全局路径常量。
 
 整个项目所有文件都从这里取路径，避免出现"在我机器上能跑"的问题。

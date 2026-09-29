@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """数据质量校验。
 
 面试时如果你只展示"我算出了利润率是 12.47%"，说服力有限。

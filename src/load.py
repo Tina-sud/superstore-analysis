@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """数据加载：raw 层 + staging 层。
 
 为什么要有两层？（这是数据开发岗的核心概念，务必理解）

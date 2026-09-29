@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Tina-sud
+
 """执行 sql/ 目录下的所有查询，把结果导出成 CSV。
 
 设计上刻意把 SQL 放在独立文件里，而不是写成 Python 字符串：

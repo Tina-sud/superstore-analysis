@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: MIT
+-- SPDX-FileCopyrightText: 2026 Tina-sud
+
 -- ============================================================
 -- 03_profit_by_subcategory.sql
 -- ------------------------------------------------------------

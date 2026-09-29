@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: MIT
+-- SPDX-FileCopyrightText: 2026 Tina-sud
+
 -- ============================================================
 -- 05_region_performance.sql
 -- ------------------------------------------------------------
